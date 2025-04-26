@@ -6,19 +6,22 @@ Welcome to the **AI Text Predictor Project**! This workflow uses local LLMs (wit
 
 ## 🗂️ Project Structure
 
-ai-text-predictor-llm/
-│
-├── .venv/                   # Your local Python virtual environment (add to .gitignore)
-├── data/
-│   ├── train-00000-of-00001-a19c10f9666706bb.parquet  # Original dataset
-│   └── context_target_pairs.csv       # Processed context/target data
-├── scripts/
-│   └── batch_ollama_prompt.py         # Resumable batch LLM prompting script
-├── outputs/
-│   └── llm_augmented_dataset.csv      # The growing, augmented dataset
-├── README.md
-├── requirements.txt
-└── .gitignore
+- `.venv/`  
+  Python virtual environment (not tracked by git)
+- `data/`
+  - `train-00000-of-00001-a19c10f9666706bb.parquet`  
+    Original dataset
+  - `context_target_pairs.csv`  
+    Processed context/target data
+- `scripts/`
+  - `batch_ollama_prompt.py`  
+    Resumable LLM batch prompting script
+- `outputs/`
+  - `llm_augmented_dataset.csv`  
+    LLM-augmented predictions
+- `README.md`
+- `requirements.txt`
+- `.gitignore`
 
 
 ---
