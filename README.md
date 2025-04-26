@@ -2,6 +2,14 @@
 
 Welcome to the **AI Text Predictor Project**! This workflow uses local LLMs (with Ollama 🦙) to automatically generate next-word or next-phrase predictions from real movie dialogue data. You’ll be building a *smarter* and more *context-aware* text prediction dataset—perfect for training modern ML models!
 
+## ⚠️ Notes & Important Changes
+### 🧪 PyTorch Nightly with CUDA 12.8
+This project utilizes PyTorch 2.8.0.dev20250425+cu128, installed from the nightly CUDA 12.8 builds. This ensures compatibility with NVIDIA GeForce RTX 50 Series GPUs (Blackwell architecture, compute capability sm_120).​
+
+### 🐍 Python 3.11 Compatibility
+
+The project is developed using Python 3.11. Ensure that your virtual environment is set up with this version to maintain compatibility.
+
 ---
 
 ## 🗂️ Project Structure
