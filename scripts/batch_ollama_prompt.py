@@ -43,11 +43,15 @@ def prompt_ollama(context, character=None):
     """
     Send a prompt to the Ollama API and get a response
     Args:
-        context: The conversation context to predict the next phrase for
+        context: The conversation context (list of strings) to predict the next phrase for
         character: Optional character name to include in the prompt
     Returns:
         str: The model's prediction or an error message
     """
+    # Convert list of dialog lines to a single string
+    if isinstance(context, list):
+        context = "\n".join(context)
+    
     prompt = context.rstrip() + "\n"
     prompt += "[Write ONLY the next likely dialog line for this conversation. Respond with a SINGLE line, no explanations, no alternatives, no extra lines.]"
     if character:
@@ -69,7 +73,7 @@ def batch_prompt_loop():
     4. Saves progress periodically
     """
     # Load the dataset from Hugging Face
-    ds = load_dataset("daily_dialog")
+    ds = load_dataset("daily_dialog", trust_remote_code=True)
     train_ds = ds['train']
     
     # Convert to DataFrame for easier manipulation
